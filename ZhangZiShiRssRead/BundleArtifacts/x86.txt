@@ -1,0 +1,2 @@
+MainPackage=C:\Users\zhexing\Documents\Visual Studio 2015\Projects\ZhangZiShiRssRead\ZhangZiShiRssRead\bin\x86\Release\ZhangZiShiRssRead_1.1.7.0_x86.appx
+SymbolPackage=C:\Users\zhexing\Documents\Visual Studio 2015\Projects\ZhangZiShiRssRead\ZhangZiShiRssRead\AppPackages\ZhangZiShiRssRead_1.1.7.0_Test\ZhangZiShiRssRead_1.1.7.0_x86.appxsym
