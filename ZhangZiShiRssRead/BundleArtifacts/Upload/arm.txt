@@ -1,6 +1,0 @@
-MainPackage=C:\Users\zhexing\Documents\Visual Studio 2015\Projects\ZhangZiShiRssRead\ZhangZiShiRssRead\bin\ARM\Release\Upload\ZhangZiShiRssRead_1.1.7.0_ARM.appx
-SymbolPackage=C:\Users\zhexing\Documents\Visual Studio 2015\Projects\ZhangZiShiRssRead\ZhangZiShiRssRead\AppPackages\ZhangZiShiRssRead_1.1.7.0\ZhangZiShiRssRead_1.1.7.0_ARM.appxsym
-ResourcePack=C:\Users\zhexing\Documents\Visual Studio 2015\Projects\ZhangZiShiRssRead\ZhangZiShiRssRead\_scale-100.appx
-ResourcePack=C:\Users\zhexing\Documents\Visual Studio 2015\Projects\ZhangZiShiRssRead\ZhangZiShiRssRead\_scale-125.appx
-ResourcePack=C:\Users\zhexing\Documents\Visual Studio 2015\Projects\ZhangZiShiRssRead\ZhangZiShiRssRead\_scale-150.appx
-ResourcePack=C:\Users\zhexing\Documents\Visual Studio 2015\Projects\ZhangZiShiRssRead\ZhangZiShiRssRead\_scale-400.appx
