@@ -39,7 +39,7 @@ namespace ZhangZiShiRssRead
             {
                 Set(ref selectedCategory, value);
                 InitItems(AllItemList, selectedCategory);
-                IsOpen = !isOpen;
+                IsOpen = false;
             }
         }
 
@@ -48,7 +48,11 @@ namespace ZhangZiShiRssRead
         public bool IsOpen
         {
             get { return isOpen; }
-            set { Set(ref isOpen, value); }
+            set
+            {
+                isOpen = value;
+                this.RaisePropertyChanged();
+            }
         }
 
         private bool isLoading;
@@ -125,7 +129,7 @@ namespace ZhangZiShiRssRead
 
         private void OpenPane()
         {
-            IsOpen = !IsOpen;
+            IsOpen = true;
         }
 
         private async void InitData()

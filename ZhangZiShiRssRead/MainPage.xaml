@@ -71,41 +71,47 @@
         </Style>
     </Page.Resources>
 
-    <SplitView x:Name="splitView" DisplayMode="CompactOverlay" CompactPaneLength="48" IsPaneOpen="{Binding IsOpen}">
-        <SplitView.Pane>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Button Grid.Row="0" Content="&#xE700;" FontFamily="{ThemeResource SymbolThemeFontFamily}" 
+    <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="columnLeftBar" Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto" ></ColumnDefinition>
+                <ColumnDefinition x:Name="columnRightBar" Width="6*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Background="{StaticResource SystemControlBackgroundAccentBrush}">
+                <Button Content="&#xE700;" FontFamily="{ThemeResource SymbolThemeFontFamily}" 
                               Width="48" Height="48" Command="{Binding OpenPaneCommand,Mode=OneTime}"></Button>
-                <ListView Grid.Row="1" ItemsSource="{Binding CategoryList}"
-                          ItemTemplate="{StaticResource NavigationItemTemplate}" 
-                          ItemContainerStyle="{StaticResource NavigationItemStyle}"
-                          SelectedItem="{Binding SelectedCategory,Mode=TwoWay}"></ListView>
-            </Grid>
-        </SplitView.Pane>
-        <SplitView.Content>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition x:Name="columnLeft" Width="4*"></ColumnDefinition>
-                    <ColumnDefinition x:Name="columnRight" Width="6*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
+            </Border>
+            <Border x:Name="borderMiddle" Grid.Column="1" Background="{StaticResource SystemControlBackgroundAccentBrush}"></Border>
+            <Border Grid.Column="2" Background="{StaticResource SystemControlBackgroundAccentBrush}">
+                <Button  Content="&#xE112;" FontFamily="{ThemeResource SymbolThemeFontFamily}" 
+                            Width="48" Height="48" Command="{Binding GoBackCommand,Mode=OneTime}"></Button>
+            </Border>
+            
+        </Grid>
+        <SplitView x:Name="splitView" DisplayMode="CompactOverlay" CompactPaneLength="48" IsPaneOpen="{Binding IsOpen}">
+            <SplitView.Pane>
+                <ListView ItemsSource="{Binding CategoryList}"
+                        ItemTemplate="{StaticResource NavigationItemTemplate}" 
+                        ItemContainerStyle="{StaticResource NavigationItemStyle}"
+                        SelectedItem="{Binding SelectedCategory,Mode=TwoWay}"></ListView>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition x:Name="columnLeft" Width="4*"></ColumnDefinition>
+                        <ColumnDefinition x:Name="columnRight" Width="6*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
 
-                <ListView x:Name="listViewItems" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" SelectedItem="{Binding SelectedItem,Mode=TwoWay}"
-                          ItemsSource="{Binding Items}" ItemTemplate="{StaticResource ZzsItemTemplate}" ItemContainerStyle="{StaticResource ZzsItemStyle}" >
-                </ListView>
-                <ProgressBar  Grid.Column="0" Grid.Row="0" IsIndeterminate="True" Visibility="{Binding IsLoading,Converter={StaticResource boolToVisible}}" ></ProgressBar>
-                <!--<Button Grid.Row="0" Grid.Column="1" Content="&#xE112;" FontFamily="{ThemeResource SymbolThemeFontFamily}" 
-                            Width="48" Height="48" Command="{Binding GoBackCommand,Mode=OneTime}"></Button>-->
-                <ContentControl Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Margin="4,0"
-                            ContentTemplate="{StaticResource WebViewTemplate}" Content="{Binding}"></ContentControl>
-            </Grid>
-        </SplitView.Content>
-    </SplitView>
+                    <ListView x:Name="listViewItems" Grid.Column="0" SelectedItem="{Binding SelectedItem,Mode=TwoWay}"
+                        ItemsSource="{Binding Items}" ItemTemplate="{StaticResource ZzsItemTemplate}" ItemContainerStyle="{StaticResource ZzsItemStyle}" >
+                    </ListView>
+                    <ProgressBar  Grid.Column="0" IsIndeterminate="True" Visibility="{Binding IsLoading,Converter={StaticResource boolToVisible}}" ></ProgressBar>
+
+                    <ContentControl Grid.Column="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Margin="4,0"
+                        ContentTemplate="{StaticResource WebViewTemplate}" Content="{Binding}"></ContentControl>
+                </Grid>
+            </SplitView.Content>
+        </SplitView>
+    </StackPanel>
 </Page>

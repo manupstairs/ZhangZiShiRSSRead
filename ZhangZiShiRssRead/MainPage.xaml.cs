@@ -70,24 +70,31 @@ namespace ZhangZiShiRssRead
         {
             if (newWidth <= 800)
             {
+                this.splitView.DisplayMode = SplitViewDisplayMode.Overlay;
+                this.borderMiddle.Width = 0;
                 if (listViewItems.SelectedItem == null)
                 {
                     columnRight.Width = zeroGridLength;
                     columnLeft.Width = oneStarGridLength;
-                    this.splitView.DisplayMode = SplitViewDisplayMode.CompactOverlay;
+                    columnRightBar.Width = zeroGridLength;
+                    columnLeftBar.Width = oneStarGridLength;
                 }
                 else
                 {
                     columnLeft.Width = zeroGridLength;
                     columnRight.Width = oneStarGridLength;
-                    this.splitView.DisplayMode = SplitViewDisplayMode.Overlay;
+                    columnLeftBar.Width = zeroGridLength;
+                    columnRightBar.Width = oneStarGridLength;
                 }
             }
             else
             {
                 columnLeft.Width = fourStarGridLength;
                 columnRight.Width = sixStarGridLength;
+                columnLeftBar.Width = fourStarGridLength;
+                columnRightBar.Width = sixStarGridLength;
                 this.splitView.DisplayMode = SplitViewDisplayMode.CompactOverlay;
+                this.borderMiddle.Width = 48;
             }
         }
     }
