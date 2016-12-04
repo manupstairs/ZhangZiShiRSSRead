@@ -71,8 +71,12 @@
         </Style>
     </Page.Resources>
 
-    <StackPanel>
-        <Grid>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="columnLeftBar" Width="4*"></ColumnDefinition>
                 <ColumnDefinition Width="Auto" ></ColumnDefinition>
@@ -95,7 +99,7 @@
             </Border>
             
         </Grid>
-        <SplitView x:Name="splitView" DisplayMode="CompactOverlay" CompactPaneLength="48" IsPaneOpen="{Binding IsOpen}">
+        <SplitView Grid.Row="1" x:Name="splitView" DisplayMode="CompactOverlay" CompactPaneLength="48" IsPaneOpen="{Binding IsOpen}">
             <SplitView.Pane>
                 <ListView ItemsSource="{Binding CategoryList}"
                         ItemTemplate="{StaticResource NavigationItemTemplate}" 
@@ -119,5 +123,5 @@
                 </Grid>
             </SplitView.Content>
         </SplitView>
-    </StackPanel>
+    </Grid>
 </Page>
