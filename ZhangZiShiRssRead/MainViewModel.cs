@@ -43,7 +43,6 @@ namespace ZhangZiShiRssRead
             }
         }
 
-
         private bool isOpen;
 
         public bool IsOpen
@@ -52,6 +51,13 @@ namespace ZhangZiShiRssRead
             set { Set(ref isOpen, value); }
         }
 
+        private bool isLoading;
+
+        public bool IsLoading
+        {
+            get { return isLoading; }
+            set { Set(ref isLoading, value); }
+        }
 
         private Item selectItem;
 
@@ -124,13 +130,17 @@ namespace ZhangZiShiRssRead
 
         private async void InitData()
         {
-            var isSuccess = await LoadRemoteDataAsync();
-            if (isSuccess == false)
-            { 
-                await LoadLocalDataAsync();
-            }
-
+            await LoadLocalDataAsync();
             InitItems(AllItemList, ALL);
+
+            IsLoading = true;
+            var isSuccess = await LoadRemoteDataAsync();
+            if (isSuccess)
+            {
+                InitItems(AllItemList, ALL);
+            }
+            IsLoading = false;
+
             CategoryList = AllItemList.Select(_ => _.Category).Distinct().ToList();
             CategoryList.Insert(0, ALL);
         }
@@ -166,10 +176,7 @@ namespace ZhangZiShiRssRead
             var isSuccess = await fileStoreHelper.SaveRssFileAsync(rssContent);
             if (isSuccess)
             {
-                foreach (var item in rssReader.ParseRss(rssNode))
-                {
-                    AllItemList.Add(item);
-                }
+                AllItemList = rssReader.ParseRss(rssNode);
                 return true;
             }
 

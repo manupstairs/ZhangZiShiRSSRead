@@ -32,11 +32,6 @@ namespace ZhangZiShiRssRead
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-
-            this.Resuming += (sender, e) =>
-            {
-                Messenger.Default.Send(new GenericMessage<string>(Const.ReloadItemList));
-            };
         }
 
         /// <summary>

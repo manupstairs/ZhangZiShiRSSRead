@@ -7,6 +7,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <local:ViewModelLocator x:Key="Locator" />
+            <local:BoolToVisible x:Key="boolToVisible"></local:BoolToVisible>
             <DataTemplate x:Key="NavigationItemTemplate">
                 <TextBlock Text="{Binding}" Margin="48,0"></TextBlock>
             </DataTemplate>

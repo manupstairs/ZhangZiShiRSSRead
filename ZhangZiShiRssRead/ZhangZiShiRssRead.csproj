@@ -104,6 +104,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Const.cs" />
+    <Compile Include="Converters\BoolToVisible.cs" />
     <Compile Include="FileStoreHelper.cs" />
     <Compile Include="IUpdateLayout.cs" />
     <Compile Include="Item.cs" />

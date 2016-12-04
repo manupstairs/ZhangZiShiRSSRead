@@ -10,3 +10,4 @@
 *.suo
 /.vs/config/applicationhost.config
 *.user
+/ZhangZiShiRssRead/bin/ARM/Debug
