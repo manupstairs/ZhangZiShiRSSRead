@@ -101,12 +101,14 @@ namespace ZhangZiShiRssRead
 
         public ICommand OpenPaneCommand { get; set; }
         public ICommand GoBackCommand { get; set; }
+        public ICommand SyncCommand { get; set; }
 
         public MainViewModel()
         {
             InitData();
             OpenPaneCommand = new RelayCommand(OpenPane);
             GoBackCommand = new RelayCommand(GoBack);
+            SyncCommand = new RelayCommand(InitData);
             Messenger.Default.Register<GenericMessage<string>>(this, HandleMessage);
         }
 

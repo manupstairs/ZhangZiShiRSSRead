@@ -78,13 +78,19 @@
                 <ColumnDefinition Width="Auto" ></ColumnDefinition>
                 <ColumnDefinition x:Name="columnRightBar" Width="6*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Border Grid.Column="0" Background="{StaticResource SystemControlBackgroundAccentBrush}">
+            <Grid Grid.Column="0" Background="{StaticResource SystemControlBackgroundAccentBrush}">
                 <Button Content="&#xE700;" FontFamily="{ThemeResource SymbolThemeFontFamily}" 
+                        HorizontalAlignment="Left" Background="{StaticResource SystemControlBackgroundAccentBrush}"
                               Width="48" Height="48" Command="{Binding OpenPaneCommand,Mode=OneTime}"></Button>
+                <Button x:Name="buttonSync" Content="&#xE117;" FontFamily="{ThemeResource SymbolThemeFontFamily}" 
+                        HorizontalAlignment="Right" Background="{StaticResource SystemControlBackgroundAccentBrush}"
+                              Width="48" Height="48" Command="{Binding SyncCommand,Mode=OneTime}"></Button>
+            </Grid>
+            <Border x:Name="borderMiddle" Grid.Column="1" Background="{StaticResource SystemControlBackgroundAccentBrush}">
+                
             </Border>
-            <Border x:Name="borderMiddle" Grid.Column="1" Background="{StaticResource SystemControlBackgroundAccentBrush}"></Border>
             <Border Grid.Column="2" Background="{StaticResource SystemControlBackgroundAccentBrush}">
-                <Button  Content="&#xE112;" FontFamily="{ThemeResource SymbolThemeFontFamily}" 
+                <Button  Content="&#xE112;" FontFamily="{ThemeResource SymbolThemeFontFamily}" Background="{StaticResource SystemControlBackgroundAccentBrush}"
                             Width="48" Height="48" Command="{Binding GoBackCommand,Mode=OneTime}"></Button>
             </Border>
             
