@@ -11,3 +11,7 @@
 /.vs/config/applicationhost.config
 *.user
 /ZhangZiShiRssRead/bin/ARM/Debug
+/ZhangZiShiRssRead/AppPackages
+/ZhangZiShiRssRead/bin
+/ZhangZiShiRssRead/BundleArtifacts
+/ZhangZiShiRssRead/_pkginfo.txt

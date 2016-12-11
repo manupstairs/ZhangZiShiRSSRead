@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="10751.UWP" Publisher="CN=820ED429-02B9-4D37-81BE-278E7FFD95D5" Version="1.1.7.0" />
+  <Identity Name="10751.UWP" Publisher="CN=820ED429-02B9-4D37-81BE-278E7FFD95D5" Version="1.1.16.0" />
   <mp:PhoneIdentity PhoneProductId="2db97c8c-0b5c-4847-ab8a-0e4b4b4b4a55" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>涨姿势UWP</DisplayName>
