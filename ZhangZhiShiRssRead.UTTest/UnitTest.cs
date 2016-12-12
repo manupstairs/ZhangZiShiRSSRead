@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace ZhangZhiShiRssRead.UTTest
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTest
     {
         [TestMethod]
         public async Task TestDownloadRss()
