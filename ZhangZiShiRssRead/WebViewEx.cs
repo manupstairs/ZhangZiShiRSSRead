@@ -30,7 +30,15 @@ namespace ZhangZiShiRssRead
             var webView = d as WebView;
             if (e.NewValue != null)
             {
-                webView.NavigateToString(e.NewValue.ToString());
+                string newValue = e.NewValue.ToString();
+                if (string.IsNullOrEmpty(newValue) == false)
+                {
+                    if (Window.Current.Bounds.Width > 800)
+                    {
+                        newValue = newValue.Replace("style=\"max-width:100%; custom:OnlyForImage\"", "style=\"max-width:60%; custom:OnlyForImage\"");
+                    }
+                    webView.NavigateToString(newValue);
+                }
             }
         }
     }

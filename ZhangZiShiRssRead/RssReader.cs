@@ -65,13 +65,6 @@ namespace ZhangZiShiRssRead
         public List<Item> ParseRss(XElement rssNode)
         {
             var items = new List<Item>();
-            //var document = XDocument.Parse(rrs);
-            //var rssNode = document.Element("rss");
-
-            //if (HasNewItems(rssNode) == false)
-            //{
-            //    return items;
-            //}
 
             XmlNameSpaceDic = GetXmlNameSpaceDic(rssNode);
             var itemNodeList = rssNode.Element(Channel).Elements("item");
@@ -155,10 +148,7 @@ namespace ZhangZiShiRssRead
 
             imgElement.SetAttributeValue("width", "100%");
             imgElement.SetAttributeValue("height", "auto");
-            var displayInfo = DisplayInformation.GetForCurrentView();
-            var scaleFactor = displayInfo.RawPixelsPerViewPixel;
-            var ppi = displayInfo.RawDpiX;
-            imgElement.SetAttributeValue("style", "max-width:" + ppi * scaleFactor + "px");
+            imgElement.SetAttributeValue("style", "max-width:100%; custom:OnlyForImage");
 
             return imgElement.ToString();
         }
